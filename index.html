@@ -92,10 +92,10 @@ data.addRows([
 
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
         
-     chart.draw(data, options);
+     chart.draw(data, options,
      tooltip: {
             isHtml: true
-        }
+        })
 }
   
       
