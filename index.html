@@ -50,10 +50,11 @@ var data = new google.visualization.DataTable();
 data.addColumn('string', 'Country'); // Implicit domain label col.
 data.addColumn('number', 'Value'); // Implicit series 1 data col.
 data.addColumn({type:'string', role:'tooltip'}); // 
+data.addColumn({type:'string', role:'tooltip'}); // 
 
 data.addRows([
 
-    [{v:"US",f:"United States of America"},1,"21% of Visits"],
+    [{v:"US",f:"United States of America"},1,"21% of Visits", "Test Text"],
 
     [{v:"GB",f:"United Kingdom"},2,"7% of visits"],
 
