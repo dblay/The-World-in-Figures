@@ -43,25 +43,26 @@
       google.charts.load('current', {'packages':['geochart']});
       google.charts.setOnLoadCallback(drawRegionsMap);
  
- 
- 
- function drawVisualization() {
-    var data = google.visualization.arrayToDataTable([
-        ['Country', 'Value', {role: 'tooltip', p:{html:true}}],
-        ['Russia', 5, 'Hello world'],
-        ['US', 20, '<img src="https://www.google.com/images/srpr/logo6w.png"/>']]);
-    var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
-    chart.draw(data, {
-        width: 800,
-        height: 600,
-        tooltip: {
-            isHtml: true
-        }
-    });
-}
- 
- 
-     
+      function drawRegionsMap() {
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Country'); // Implicit domain label col.
+data.addColumn('number', 'Value'); // Implicit series 1 data col.
+data.addColumn({type:'string', role:'tooltip'}); // 
+data.addRows([
+    [{v:"US",f:"United States of America"},1,'<img src="https://www.google.com/images/srpr/logo6w.png"/>'],
+    [{v:"GB",f:"United Kingdom"},2,'<p>hello world</p>'],
+    [{v:"DE",f:"Germany"},3,"GNI Per Capita: 54675"],
+    [{v:"FR",f:"France"},4,"5% of visits"],
+    [{v:"ES",f:"Spain"},5,"5% of visits"],
+    [{v:"CA",f:"Canada"},6,"4% of visits"],
+    [{v:"IT",f:"Italy"},7,"4% of visits"],
+    [{v:"NL",f:"The Netherlands"},8,"4% of visits"],
+    [{v:"BR",f:"Brazil"},9,"4% of visits"],
+    [{v:"TR",f:"Turkey"},10,"3% of visits"],
+    [{v:"IN",f:"India"},11,"3% of visits"],
+    [{v:"RU",f:"Russia"},12,"3% of visits"],
+    [{v:"AU",f:"Australia"},13,"2% of visits"],
+]);
         var options = {
           colorAxis: {colors: ['#6bfa6b', '#F0E68C', '#ff3333']},
           backgroundColor: '#81d4fa',
@@ -109,4 +110,5 @@
   </body>
 </html>
 Status API Training Shop Blog About
+
 
