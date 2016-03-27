@@ -45,6 +45,43 @@
  
       function drawRegionsMap() {
 
+
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Country'); // Implicit domain label col.
+data.addColumn('number', 'Value'); // Implicit series 1 data col.
+data.addColumn({type:'string', role:'tooltip'}); // 
+
+data.addRows([
+
+    [{v:"US",f:"United States of America"},1,"21% of Visits"],
+
+    [{v:"GB",f:"United Kingdom"},2,"7% of visits"],
+
+    [{v:"DE",f:"Germany"},3,"6% of visits"],
+
+    [{v:"FR",f:"France"},4,"5% of visits"],
+
+    [{v:"ES",f:"Spain"},5,"5% of visits"],
+
+    [{v:"CA",f:"Canada"},6,"4% of visits"],
+
+    [{v:"IT",f:"Italy"},7,"4% of visits"],
+
+    [{v:"NL",f:"The Netherlands"},8,"4% of visits"],
+
+    [{v:"BR",f:"Brazil"},9,"4% of visits"],
+
+    [{v:"TR",f:"Turkey"},10,"3% of visits"],
+
+    [{v:"IN",f:"India"},11,"3% of visits"],
+
+    [{v:"RU",f:"Russia"},12,"3% of visits"],
+
+    [{v:"AU",f:"Australia"},13,"2% of visits"],
+
+]);
+
+
         var data = google.visualization.arrayToDataTable([
           ['Country', 'GNI Per Capita'],
           ['Germany', 47640],
