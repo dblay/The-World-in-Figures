@@ -66,6 +66,14 @@
 
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
         
+        
+         var geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
+    google.visualization.events.addListener(geochart, 'select', function() {
+        var selectionIdx = geochart.getSelection()[0].row;
+        var countryName = data.getValue(selectionIdx, 0);
+        window.open('http://en.wikipedia.org/wiki/' + countryName);
+        
+        
         chart.draw(data, options);
         
         
